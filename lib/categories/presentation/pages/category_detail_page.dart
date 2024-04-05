@@ -91,13 +91,12 @@ class _CategoriesPageState extends ConsumerState<CategoryDetailsPage> {
                     margin: const EdgeInsets.only(top: 30),
                     child: RetryColumnWidget(
                       onTap: () {
-                        //  getData(url);
                       },
                     ),
                   ),
                   loading: () => SizedBox(
                     height: MediaQuery.of(context).size.height * 0.9,
-                    child: const LoadingUrlShortenerWidget(),
+                    child: const LoadingCategoriesWidget(),
                   ),
                   data: (data) {
                     return SizedBox(

@@ -38,16 +38,16 @@ _i1.GetIt init(
   );
   final injectableModule = _$InjectableModule();
   gh.singleton<_i3.Dio>(injectableModule.authDio);
-  gh.factory<_i4.UrlShortenerService>(() => _i4.UrlShortenerImpl(
+  gh.factory<_i4.CategoriesService>(() => _i4.CategoriesImpl(
         gh<_i3.Dio>(),
         gh<_i5.AppConfig>(),
       ));
-  gh.factory<_i6.UrlShortenerRepository>(
-      () => _i7.UrlShortenerRepositoryImpl(gh<_i4.UrlShortenerService>()));
+  gh.factory<_i6.CategoriesRepository>(
+      () => _i7.CategoriesRepositoryImpl(gh<_i4.CategoriesService>()));
   gh.factory<_i8.GetCategories>(
-      () => _i8.GetCategories(gh<_i6.UrlShortenerRepository>()));
+      () => _i8.GetCategories(gh<_i6.CategoriesRepository>()));
   gh.factory<_i9.GetCategoriesDetails>(
-      () => _i9.GetCategoriesDetails(gh<_i6.UrlShortenerRepository>()));
+      () => _i9.GetCategoriesDetails(gh<_i6.CategoriesRepository>()));
   return getIt;
 }
 

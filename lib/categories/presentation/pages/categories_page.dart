@@ -64,60 +64,6 @@ class _CategoriesPageState extends ConsumerState<CategoriesPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /*Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: Container(
-                          height: 35,
-                          margin: const EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.4),
-                                  spreadRadius: 5),
-                            ],
-                          ),
-                          child: TextFormField(
-                            maxLines: 1,
-                            onChanged: (value) {
-                              url = value;
-                            },
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              isDense: true,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 10),
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.4),
-                                spreadRadius: 5),
-                          ],
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            getData(url);
-                          },
-                          child: const Icon(
-                            Icons.keyboard_arrow_right_outlined,
-                            size: 33.0,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),*/
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     child: Text('Categorias',
@@ -125,23 +71,22 @@ class _CategoriesPageState extends ConsumerState<CategoriesPage> {
                   ),
                   launchState.maybeWhen(
                     error: (_) => Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
+                      width: MediaQuery.of(context).size.width,
                       margin: const EdgeInsets.only(top: 30),
                       child: RetryColumnWidget(
                         onTap: () {
-                          //  getData(url);
+                          getData();
                         },
                       ),
                     ),
                     loading: () => SizedBox(
                       height: MediaQuery.of(context).size.height * 0.9,
-                      child: const LoadingUrlShortenerWidget(),
+                      child: const LoadingCategoriesWidget(),
                     ),
                     data: (data) {
                       return SizedBox(
                         height: MediaQuery.of(context).size.height * 0.8,
                         child: ListView.builder(
-                          key: const Key('linkList'),
                           scrollDirection: Axis.vertical,
                           physics: const ScrollPhysics(),
                           itemCount: data.length,
@@ -155,24 +100,9 @@ class _CategoriesPageState extends ConsumerState<CategoriesPage> {
                     orElse: () => const SizedBox(),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 10)),
-                  /*  SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.8,
-                  child: ListView.builder(
-                    key: const Key('linkList'),
-                    scrollDirection: Axis.vertical,
-                    physics: const ScrollPhysics(),
-                    itemCount: arrayLinks.length,
-                    itemBuilder: (context, index) {
-                      final link = arrayLinks[index];
-                      return ItemWidget(link: link);
-                    },
-                  ),
-                ),*/
                 ],
               ),
             ),
-
-
           ),
         ),
       ),

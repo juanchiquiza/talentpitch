@@ -12,7 +12,7 @@ class GetCategories
   /// Constructor
   GetCategories(this._repository);
 
-  final UrlShortenerRepository _repository;
+  final CategoriesRepository _repository;
 
   @override
   Future<Either<Failure, List<Category>>> execute(
@@ -21,11 +21,8 @@ class GetCategories
       _repository.getCategoriesRepository();
 }
 
-/// Params used for [GetUrlShortener]
+/// Params used for [GetCategories]
 class GetCategoriesParams {
   /// Constructor
   GetCategoriesParams();
-
-  /// Url ofShortener Repository
-//final String url;
 }

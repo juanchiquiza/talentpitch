@@ -4,10 +4,10 @@ import 'package:shimmer/shimmer.dart';
 import '/core/presentation/styles/colors_app.dart';
 import '/core/presentation/styles/shadow_styles.dart';
 
-/// Loading Link list
-class LoadingUrlShortenerWidget extends StatelessWidget {
+/// Loading Categories list
+class LoadingCategoriesWidget extends StatelessWidget {
   /// Constructor
-  const LoadingUrlShortenerWidget({super.key});
+  const LoadingCategoriesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class LoadingUrlShortenerWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: 10,
+                  height: 30,
                   width: 150,
                   margin: const EdgeInsets.only(right: 12, left: 4),
                   decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class LoadingUrlShortenerWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 5),
                 Container(
-                  height: 10,
+                  height: 30,
                   width: 130,
                   margin: const EdgeInsets.only(right: 12, left: 4),
                   decoration: BoxDecoration(

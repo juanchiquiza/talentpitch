@@ -12,7 +12,7 @@ class GetCategoriesDetails
   /// Constructor
   GetCategoriesDetails(this._repository);
 
-  final UrlShortenerRepository _repository;
+  final CategoriesRepository _repository;
 
   @override
   Future<Either<Failure, List<Talent>>> execute(

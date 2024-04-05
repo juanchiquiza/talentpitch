@@ -5,7 +5,7 @@ import '/core/domain/failures/failure.dart';
 import '/categories/domain/entities/category.dart';
 
 /// Repository for use cases of Categories
-abstract class UrlShortenerRepository {
+abstract class CategoriesRepository {
   /// get categories
   Future<Either<Failure, List<Category>>> getCategoriesRepository();
 

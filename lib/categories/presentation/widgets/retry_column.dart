@@ -26,7 +26,7 @@ class RetryColumnWidget extends ConsumerWidget {
                 'Hubo un error al cargar el contenido.\nIntenta de nuevo.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
                   color: ColorsApp.black,
                 ),

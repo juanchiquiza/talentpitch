@@ -64,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _callUrlShortenerPage() {
+  void _callCategoriesPage() {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => const CategoriesPage()),
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => _callUrlShortenerPage());
+        .addPostFrameCallback((_) => _callCategoriesPage());
     return Scaffold(
       body: Center(
         child: Column(

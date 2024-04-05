@@ -1,27 +1,27 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import '/categories/infrastructure/data/datasources/remote_services/categories_service.dart';
 import '/categories/domain/entities/talent.dart';
 import '/categories/domain/entities/category.dart';
 import '/categories/domain/repositories/url_shortener_repository.dart';
 import '/categories/infrastructure/mapper/mapper_domain.dart';
-import '/categories/infrastructure/data/datasources/remote_services/categories_service.dart';
 import '/core/domain/failures/failure.dart';
 import '/core/infrastructure/repositories/repository_base.dart';
 
-/// Implementation of [UrlShortenerRepository]
-@Injectable(as: UrlShortenerRepository)
-class UrlShortenerRepositoryImpl implements UrlShortenerRepository {
+/// Implementation of [CategoriesRepository]
+@Injectable(as: CategoriesRepository)
+class CategoriesRepositoryImpl implements CategoriesRepository {
   /// Constructor
-  UrlShortenerRepositoryImpl(
-    this._urlShortenerService,
+  CategoriesRepositoryImpl(
+    this._categoriesService,
   );
 
-  final UrlShortenerService _urlShortenerService;
+  final CategoriesService _categoriesService;
 
   @override
   Future<Either<Failure, List<Category>>> getCategoriesRepository() {
     return RepositoryBase<List<Category>>().remoteRequest(() async {
-      final response = await _urlShortenerService.getCategories();
+      final response = await _categoriesService.getCategories();
       return Right(response.toDomain());
     });
   }
@@ -30,7 +30,7 @@ class UrlShortenerRepositoryImpl implements UrlShortenerRepository {
   Future<Either<Failure, List<Talent>>> getCategoriesDetailsRepository(
       String url) {
     return RepositoryBase<List<Talent>>().remoteRequest(() async {
-      final response = await _urlShortenerService.getCategoriesDetails(url);
+      final response = await _categoriesService.getCategoriesDetails(url);
       return Right(response.toDomain());
     });
   }
