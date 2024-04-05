@@ -1,11 +1,11 @@
-# talentpitch
+# Talentpitch
 
 A new Flutter project.
 
 # To generate files
 dart  run build_runner build --delete-conflicting-outputs
 
-# To execute test
+# Evidence
 Add video
 https://github.com/juanchiquiza/talentpitch/blob/main/evidence.mov
 
